@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/search_bar"
+        android:layout_gravity="center_horizontal" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:id="@+id/banner"
+        android:background="@drawable/banner"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Health Services Categories"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Please select a Health Service Category"
+        android:id="@+id/textView3"
+        android:layout_gravity="center_horizontal" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="129dp"
+        android:id="@+id/categoriesListView"
+        android:background="#faebd7"
+        android:divider="#dddddd"
+        android:dividerHeight="2dp"
+        android:layout_weight="0.99"
+        android:focusable="true"
+
+        >
+        <requestFocus/>
+        </ListView>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:id="@+id/sponser"
+        android:background="@drawable/sponser1"
+        android:scaleType="fitXY"/>
+
+
+</LinearLayout>

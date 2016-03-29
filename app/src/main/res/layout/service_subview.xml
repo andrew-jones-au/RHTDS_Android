@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Service Name"
+        android:id="@+id/serviceSubviewName"
+        android:textColor="#000000" />
+
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/websiteIcon"
+        android:src="@drawable/home"
+        android:layout_below="@+id/serviceSubviewName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="www.site.com"
+        android:id="@+id/serviceSubviewWebsite"
+        android:layout_alignTop="@+id/websiteIcon"
+        android:layout_toRightOf="@+id/websiteIcon"
+        android:textColor="#555555" />
+
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/emailIcon"
+        android:src="@drawable/email"
+        android:layout_below="@+id/serviceSubviewWebsite"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="site@site.com"
+        android:id="@+id/serviceSubviewEmail"
+        android:layout_alignTop="@+id/emailIcon"
+        android:layout_alignLeft="@+id/serviceSubviewWebsite"
+        android:textColor="#555555" />
+
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/phoneIcon"
+        android:src="@drawable/phone"
+        android:layout_below="@+id/serviceSubviewEmail"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop ="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="6312345678"
+        android:id="@+id/serviceSubviewPhone"
+        android:layout_alignTop="@+id/phoneIcon"
+        android:layout_alignLeft="@+id/serviceSubviewWebsite"
+        android:textColor="#555555" />
+
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addressIcon"
+        android:src="@drawable/home"
+        android:layout_below="@+id/serviceSubviewPhone"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop ="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="123 street street"
+        android:id="@+id/serviceSubviewAddress"
+        android:layout_alignTop="@+id/addressIcon"
+        android:layout_alignLeft="@+id/serviceSubviewWebsite"
+        android:textColor="#555555" />
+
+</RelativeLayout>

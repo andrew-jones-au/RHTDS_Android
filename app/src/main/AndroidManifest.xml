@@ -13,6 +13,9 @@
          Google Maps Android API v2, but are recommended.
     -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:maxSdkVersion="22"/>
 
     <application
         android:allowBackup="true"

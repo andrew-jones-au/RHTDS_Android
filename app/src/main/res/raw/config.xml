@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <URI_SCHEME>https</URI_SCHEME>
+    <SERVER>ruralhealth.johnkendall.net</SERVER>
+    <PORT>443</PORT>
+    <API_CONTEXT>/ruralhealthdirectoryservice</API_CONTEXT>
+    <HEALTH_SERVICE_ENDPOINT>/healthservices</HEALTH_SERVICE_ENDPOINT>
+    <ADDRESS_ENDPOINT>/address</ADDRESS_ENDPOINT>
+    <CATEGORIES_ENDPOINT>/categories</CATEGORIES_ENDPOINT>
+    <COORDINATES_ENDPOINT>/coordinates</COORDINATES_ENDPOINT>
+
+</config>

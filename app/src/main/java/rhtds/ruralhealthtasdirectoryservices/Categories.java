@@ -21,12 +21,15 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 /**
  * Created by Andrew on 11/16/2015.
  */
 public class Categories extends ActionBarActivity
 {
+    private static final String TAG = "CategoriesActivity";
+
     CategoriesArrayAdapter adapter;
     ArrayList<String> listItems=new ArrayList<String>();
 
@@ -50,6 +53,16 @@ public class Categories extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories);
         initViewItems();
+
+        //TODO: Testing ConfigManager
+        try
+        {
+            new RuralHealthAPIClient.Client(getApplicationContext());
+        }
+        catch( Exception e)
+        {
+            Log.e(TAG, e.toString());
+        }
 
         new AsyncTask<Void, Void, Void>() {
             protected void onPreExecute() {

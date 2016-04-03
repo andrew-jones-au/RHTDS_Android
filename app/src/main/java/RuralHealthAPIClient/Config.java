@@ -3,6 +3,8 @@ package RuralHealthAPIClient;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
+import java.text.Format;
+
 /**
  * Created by John on 2/04/2016.
  */
@@ -20,17 +22,17 @@ public class Config {
     @Element(name="API_CONTEXT")
     private String apiContext;
 
-    @Element(name="HEALTH_SERVICE_ENDPOINT")
-    private String healthServiceEndpoint;
+    @Element(name="HEALTH_SERVICE_RESOURCE")
+    private String healthServiceResource;
 
-    @Element(name="ADDRESS_ENDPOINT")
-    private String addressEndpoint;
+    @Element(name="ADDRESS_RESOURCE")
+    private String addressResource;
 
-    @Element(name="CATEGORIES_ENDPOINT")
-    private String categoriesEndpoint;
+    @Element(name="CATEGORIES_RESOURCE")
+    private String categoriesResource;
 
-    @Element(name="COORDINATES_ENDPOINT")
-    private String coordinatesEndpoint;
+    @Element(name="COORDINATES_RESOURCE")
+    private String coordinatesResource;
 
     public String getUriScheme() {
         return uriScheme;
@@ -64,35 +66,55 @@ public class Config {
         this.apiContext = apiContext;
     }
 
-    public String getHealthServiceEndpoint() {
-        return healthServiceEndpoint;
+    public String getHealthServiceResource() {
+        return healthServiceResource;
     }
 
-    public void setHealthServiceEndpoint(String healthServiceEndpoint) {
-        this.healthServiceEndpoint = healthServiceEndpoint;
+    public void setHealthServiceResource(String healthServiceResource) {
+        this.healthServiceResource = healthServiceResource;
     }
 
-    public String getAddressEndpoint() {
-        return addressEndpoint;
+    public String getAddressResource() {
+        return addressResource;
     }
 
-    public void setAddressEndpoint(String addressEndpoint) {
-        this.addressEndpoint = addressEndpoint;
+    public void setAddressResource(String addressResource) {
+        this.addressResource = addressResource;
     }
 
-    public String getCategoriesEndpoint() {
-        return categoriesEndpoint;
+    public String getCategoriesResource() {
+        return categoriesResource;
     }
 
-    public void setCategoriesEndpoint(String categoriesEndpoint) {
-        this.categoriesEndpoint = categoriesEndpoint;
+    public void setCategoriesResource(String categoriesResource) {
+        this.categoriesResource = categoriesResource;
     }
 
-    public String getCoordinatesEndpoint() {
-        return coordinatesEndpoint;
+    public String getCoordinatesResource() {
+        return coordinatesResource;
     }
 
-    public void setCoordinatesEndpoint(String coordinatesEndpoint) {
-        this.coordinatesEndpoint = coordinatesEndpoint;
+    public void setCoordinatesResource(String coordinatesResource) {
+        this.coordinatesResource = coordinatesResource;
+    }
+
+    public String getHealthServiceEndpoint()
+    {
+        return getUriScheme() + "://" + getServer() + ":" + getPort() +  getApiContext() +  getHealthServiceResource();
+    }
+
+    public String getAddressEndpoint()
+    {
+        return getUriScheme() + "://" + getServer() + ":" + getPort() + getApiContext() +  getAddressResource();
+    }
+
+    public String getCoordinateEndpoint()
+    {
+        return getUriScheme() + "://" + getServer() + ":" + getPort() + getApiContext() +  getCoordinatesResource();
+    }
+
+    public String getCategoryEndpoint()
+    {
+        return getUriScheme() + "://" + getServer() + ":" + getPort() +  getApiContext() +  getCategoriesResource();
     }
 }

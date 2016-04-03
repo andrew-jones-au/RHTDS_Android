@@ -46,6 +46,7 @@ public class HealthServiceDBHelper extends SQLiteOpenHelper
 
     void createAllTables(SQLiteDatabase db)
     {
+        new HealthServiceDBOperationTask(); //TODO
         db.execSQL(HealthServiceDBContract.SQL_CREATE_TABLE_HEALTH_SERVICE);
         db.execSQL(HealthServiceDBContract.SQL_CREATE_TABLE_ADDRESS);
         db.execSQL(HealthServiceDBContract.SQL_CREATE_TABLE_CATEGORY);
@@ -61,49 +62,15 @@ public class HealthServiceDBHelper extends SQLiteOpenHelper
         db.execSQL(HealthServiceDBContract.SQL_DELETE_TABLE_COORDINATE);
         db.execSQL(HealthServiceDBContract.SQL_DELETE_TABLE_CATEGORY_HEALTH_SERVICE);
     }
-    public HealthService[] getAllHealthServices()
+
+    public Cursor executeQuery(String query)
     {
-        HealthService[] healthServices;
         SQLiteDatabase db = getReadableDatabase();
-        String selection = "";
-        String selectionArgs = "";
-        String sortOrder = HealthServiceDBContract.HealthService.COLUMN_NAME_TITLE + " DESC";
 
-        String[] projection = {
-                HealthServiceDBContract.HealthService._ID,
-                HealthServiceDBContract.HealthService.COLUMN_NAME_ID,
-                HealthServiceDBContract.HealthService.COLUMN_NAME_TITLE,
-                HealthServiceDBContract.HealthService.COLUMN_NAME_DESCRIPTION,
-                HealthServiceDBContract.HealthService.COLUMN_NAME_ADDRESS,
-                HealthServiceDBContract.HealthService.COLUMN_NAME_ALT_PHONE,
-                HealthServiceDBContract.HealthService.COLUMN_NAME_IMGURI,
-                HealthServiceDBContract.HealthService.COLUMN_NAME_PHONE,
-                HealthServiceDBContract.HealthService.COLUMN_NAME_ALT_PHONE,
-                HealthServiceDBContract.HealthService.COLUMN_NAME_EMAIL,
-                HealthServiceDBContract.HealthService.COLUMN_NAME_WEBSITE
-        };
-
-        Cursor cursor = db.query(HealthServiceDBContract.HealthService.TABLE_NAME,
-                projection,
-                null,
-                null,
-                null,
-                null,
-                sortOrder);
-
-        healthServices = new HealthService[cursor.getCount()];
-
-        int index = 0;
-        while(cursor.moveToNext())
-        {
-            healthServices[index] = healthServiceFromRow(cursor);
-            index++;
-        }
-
-        return healthServices;
+        return db.rawQuery(query, null);
     }
 
-    private HealthService healthServiceFromRow(Cursor cursor)
+    public static HealthService healthServiceFromRow(Cursor cursor)
     {
         HealthService healthService = new HealthService();
 

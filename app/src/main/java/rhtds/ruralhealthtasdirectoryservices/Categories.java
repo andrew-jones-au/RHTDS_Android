@@ -21,7 +21,11 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.logging.Logger;
+
+import RuralHealthAPIClient.Client;
+import RuralHealthAPIClient.Models.HealthService;
 
 /**
  * Created by Andrew on 11/16/2015.
@@ -57,7 +61,16 @@ public class Categories extends ActionBarActivity
         //TODO: Testing ConfigManager
         try
         {
-            new RuralHealthAPIClient.Client(getApplicationContext());
+            Client client = new RuralHealthAPIClient.Client(getApplicationContext()){
+                @Override
+                public void handleResult(Object result)
+                {
+                    HealthService[] healthServices = (HealthService[])result;
+
+                    Log.d(TAG, "Handle Result called");
+                }
+            };
+            client.getAllHealthServices();
         }
         catch( Exception e)
         {

@@ -68,4 +68,12 @@ public class ConfigurationManager
 
         Log.d(TAG, "Loaded config file");
     }
+
+    public Config getConfig() {
+        return config;
+    }
+
+    public void setConfig(Config config) {
+        this.config = config;
+    }
 }

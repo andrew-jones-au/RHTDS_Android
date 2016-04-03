@@ -22,7 +22,7 @@ public class HealthServiceDBContract {
             HealthService.COLUMN_NAME_EMAIL + TEXT_TYPE + COMMA_SEP +
             HealthService.COLUMN_NAME_WEBSITE + TEXT_TYPE + COMMA_SEP +
             HealthService.COLUMN_NAME_IMGURI + TEXT_TYPE + COMMA_SEP +
-            HealthService.COLUMN_NAME_ADDRESS + TEXT_TYPE + COMMA_SEP + " )";
+            HealthService.COLUMN_NAME_ADDRESS + TEXT_TYPE +  " )";
 
     public static final String SQL_CREATE_TABLE_ADDRESS =
             "CREATE TABLE " + Address.TABLE_NAME + " (" +
@@ -35,28 +35,28 @@ public class HealthServiceDBContract {
             Address.COLUMN_NAME_STATE + TEXT_TYPE + COMMA_SEP +
             Address.COLUMN_NAME_COUNTRY + TEXT_TYPE + COMMA_SEP +
             Address.COLUMN_NAME_POSTCODE + TEXT_TYPE + COMMA_SEP +
-            Address.COLUMN_NAME_COORDINATE + TEXT_TYPE + COMMA_SEP + " )";
+            Address.COLUMN_NAME_COORDINATE + TEXT_TYPE +  " )";
 
     public static final String SQL_CREATE_TABLE_COORDINATE =
             "CREATE TABLE " + Coordinate.TABLE_NAME + " (" +
             Coordinate._ID + " INTEGER PRIMARY KEY," +
             Coordinate.COLUMN_NAME_ID + TEXT_TYPE + COMMA_SEP +
             Coordinate.COLUMN_NAME_LONGITUDE + TEXT_TYPE + COMMA_SEP +
-            Coordinate.COLUMN_NAME_LATITUDE + TEXT_TYPE + COMMA_SEP + " )";
+            Coordinate.COLUMN_NAME_LATITUDE + TEXT_TYPE +  " )";
 
     public static final String SQL_CREATE_TABLE_CATEGORY =
             "CREATE TABLE " + Category.TABLE_NAME + " (" +
             Category._ID + " INTEGER PRIMARY KEY," +
             Category.COLUMN_NAME_ID + TEXT_TYPE + COMMA_SEP +
             Category.COLUMN_NAME_NAME + TEXT_TYPE + COMMA_SEP +
-            Category.COLUMN_NAME_DESCRIPTION + TEXT_TYPE + COMMA_SEP + " )";
+            Category.COLUMN_NAME_DESCRIPTION + TEXT_TYPE +  " )";
 
     public static final String SQL_CREATE_TABLE_CATEGORY_HEALTH_SERVICE =
             "CREATE TABLE " + CategoryHealthService.TABLE_NAME + " (" +
             CategoryHealthService._ID + " INTEGER PRIMARY KEY," +
             CategoryHealthService.COLUMN_NAME_ID + TEXT_TYPE + COMMA_SEP +
             CategoryHealthService.COLUMN_NAME_CATEGORY_ID + TEXT_TYPE + COMMA_SEP +
-            CategoryHealthService.COLUMN_NAME_HEALTH_SERVICE_ID + TEXT_TYPE + COMMA_SEP + " )";
+            CategoryHealthService.COLUMN_NAME_HEALTH_SERVICE_ID + TEXT_TYPE +  " )";
 
     public static final String SQL_DELETE_TABLE_HEALTH_SERVICE =
             "DROP TABLE IF EXISTS " + HealthService.TABLE_NAME;

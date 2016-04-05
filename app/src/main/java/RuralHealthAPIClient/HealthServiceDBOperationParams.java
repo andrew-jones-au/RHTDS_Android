@@ -1,6 +1,10 @@
 package RuralHealthAPIClient;
 
 
+import android.content.ContentValues;
+
+import java.util.HashMap;
+
 import RuralHealthAPIClient.Interfaces.TaskParamInterface;
 
 /**
@@ -10,4 +14,5 @@ public class HealthServiceDBOperationParams implements TaskParamInterface
 {
     HealthServiceDBHelper db;
     String query;
+    Object data;
 }

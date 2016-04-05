@@ -7,12 +7,20 @@ import android.database.Cursor;
  */
 public class HealthServiceDBOperationResult {
     private Cursor cursor;
+    private long rowId;
 
     public Cursor getCursor() {
         return cursor;
     }
-
     public void setCursor(Cursor cursor) {
         this.cursor = cursor;
+    }
+
+    public long getRowId() {
+        return rowId;
+    }
+
+    public void setRowId(long rowId) {
+        this.rowId = rowId;
     }
 }

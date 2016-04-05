@@ -1,11 +1,16 @@
 package RuralHealthAPIClient.Models;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import RuralHealthAPIClient.HealthServiceDBContract;
+import RuralHealthAPIClient.HealthServiceDBHelper;
+import RuralHealthAPIClient.Interfaces.HealthServiceModelInterface;
 
 /**
  * Created by John on 2/04/2016.
  */
-public class HealthService {
+public class HealthService implements HealthServiceModelInterface {
 
     private int id;
     private String title;
@@ -20,6 +25,21 @@ public class HealthService {
 
     public int getId() {
         return id;
+    }
+
+    public HashMap<String, String> toHashMap()
+    {
+        HashMap<String, String> hashMap = new HashMap<String, String>();
+
+        hashMap.put(HealthServiceDBContract.HealthService.COLUMN_NAME_TITLE, title);
+        hashMap.put(HealthServiceDBContract.HealthService.COLUMN_NAME_ALT_PHONE, altPhone);
+        hashMap.put(HealthServiceDBContract.HealthService.COLUMN_NAME_PHONE, phone);
+        hashMap.put(HealthServiceDBContract.HealthService.COLUMN_NAME_DESCRIPTION, description);
+        hashMap.put(HealthServiceDBContract.HealthService.COLUMN_NAME_EMAIL, email);
+        hashMap.put(HealthServiceDBContract.HealthService.COLUMN_NAME_WEBSITE, website);
+        hashMap.put(HealthServiceDBContract.HealthService.COLUMN_NAME_IMGURI, imgURI);
+
+        return hashMap;
     }
 
     public void setId(int id) {

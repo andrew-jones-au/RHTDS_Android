@@ -34,6 +34,17 @@ public class Config {
     @Element(name="COORDINATES_RESOURCE")
     private String coordinatesResource;
 
+    @Element(name="STATIC_CONTENT_ENDPOINT")
+    private String staticContentEndpoint;
+
+    public String getStaticContentEndpoint() {
+        return staticContentEndpoint;
+    }
+
+    public void setStaticContentEndpoint(String staticContentEndpoint) {
+        this.staticContentEndpoint = staticContentEndpoint;
+    }
+
     public String getUriScheme() {
         return uriScheme;
     }

@@ -6,6 +6,7 @@
     <API_CONTEXT>/ruralhealthdirectoryservice</API_CONTEXT>
     <HEALTH_SERVICE_RESOURCE>/healthservices</HEALTH_SERVICE_RESOURCE>
     <ADDRESS_RESOURCE>/address</ADDRESS_RESOURCE>
-    <CATEGORIES_RESOURCE>/categories</CATEGORIES_RESOURCE>
+    <CATEGORIES_RESOURCE>/categoryForeignCollection</CATEGORIES_RESOURCE>
     <COORDINATES_RESOURCE>/coordinates</COORDINATES_RESOURCE>
+    <STATIC_CONTENT_ENDPOINT>https://s3-ap-southeast-2.amazonaws.com/ruralhealth</STATIC_CONTENT_ENDPOINT>
 </config>

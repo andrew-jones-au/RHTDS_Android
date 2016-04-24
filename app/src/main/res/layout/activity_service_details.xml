@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="false"
-    android:id="@+id/serviceScrollView">
+    android:id="@+id/serviceScrollView"
+    android:background="#ffffff">
 
     <RelativeLayout
         android:orientation="vertical"
@@ -14,27 +15,48 @@
         android:weightSum="1"
         android:id="@+id/serviceDetailsRelativeLayout">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Company Title"
-            android:id="@+id/serviceNameTextView"
-            android:layout_centerHorizontal="true" />
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#fde6d0"
+            android:id="@+id/TitleBar">
 
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Company Title"
+                android:id="@+id/serviceNameTextView"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:height="50dp"
+                android:layout_weight="0.8" />
 
-
-
+            <TextView
+                android:layout_width="89dp"
+                android:layout_height="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Map"
+                android:id="@+id/MapButton"
+                android:textAlignment="gravity"
+                android:layout_centerHorizontal="true"
+                android:height="50dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_gravity="right"
+                android:textColor="#001eff" />
+        </LinearLayout>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/phoneIcon"
             android:src="@drawable/phone"
-            android:layout_below="@+id/serviceNameTextView"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_below="@+id/TitleBar"
             android:layout_marginTop="10dp" />
 
         <TextView
@@ -54,8 +76,8 @@
             android:src="@drawable/home"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/servicePhoneTextView" />
+            android:layout_below="@+id/phoneIcon"
+            android:layout_marginRight="10dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -67,12 +89,6 @@
             android:layout_alignLeft="@+id/servicePhoneTextView" />
 
 
-
-
-
-
-
-
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -81,7 +97,8 @@
             android:layout_below="@+id/serviceAddressTextView"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -92,11 +109,6 @@
             android:layout_alignTop="@+id/emailIcon"
             android:layout_alignLeft="@+id/servicePhoneTextView" />
 
-
-
-
-
-
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -105,7 +117,8 @@
             android:layout_below="@+id/serviceEmailTextView"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -117,11 +130,6 @@
             android:layout_alignLeft="@+id/servicePhoneTextView" />
 
 
-
-
-
-
-
         <ImageView
             android:layout_width="121dp"
             android:layout_height="wrap_content"
@@ -130,52 +138,19 @@
             android:src="@mipmap/ic_launcher"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/serviceWebsiteTextView"
-            android:layout_marginTop="10dp" />
-
-
-
-
-
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="#000000"
-            android:layout_below="@+id/serviceImageView"
-            android:id="@+id/serviceDescriptionTopLine"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:maxHeight="80dp"
+            android:maxWidth="400dp" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Description"
             android:id="@+id/serviceDescriptionTextView"
-            android:layout_below="@+id/serviceDescriptionTopLine"
-            android:layout_marginTop="10dp" />
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="#000000"
-            android:layout_below="@+id/serviceDescriptionTextView"
-            android:id="@+id/serviceDescriptionBottomLine"
-            android:layout_marginTop="10dp"/>
-
-
-
-
-
-
-
-        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-            android:name="com.google.android.gms.maps.MapFragment"
-            android:id="@+id/map"
-            android:layout_width="match_parent"
-            android:layout_height="272dp"
-            android:layout_below="@+id/serviceDescriptionBottomLine"
-            android:layout_marginTop="10dp"/>
-
+            android:layout_marginTop="10dp"
+            android:background="#ffffff"
+            android:layout_below="@+id/serviceImageView" />
 
     </RelativeLayout>
 </ScrollView>

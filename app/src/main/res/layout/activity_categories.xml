@@ -2,7 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:focusableInTouchMode="true"
+    android:background="#fde6d0"
+    android:id="@+id/container_view">
 
     <include
         android:layout_width="match_parent"
@@ -21,30 +24,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Health Services Categories"
+        android:text="Please select a category"
         android:id="@+id/textView"
-        android:layout_gravity="center_horizontal" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Please select a Health Service Category"
-        android:id="@+id/textView3"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="left|center_horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp" />
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="129dp"
+        android:layout_height="wrap_content"
         android:id="@+id/categoriesListView"
-        android:background="#faebd7"
+        android:background="#fde6d0"
         android:divider="#dddddd"
         android:dividerHeight="2dp"
-        android:layout_weight="0.99"
+        android:layout_weight="1"
         android:focusable="true"
-
-        >
-        <requestFocus/>
+        android:layout_gravity="right">
         </ListView>
 
     <ImageView

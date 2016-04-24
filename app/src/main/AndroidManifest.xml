@@ -21,32 +21,31 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
-            android:name=".Home"
+            android:name=".Activities.Categories"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".Categories"
+            android:name=".Activities.HealthServices"
             android:label="@string/app_name" >
         </activity>
+
         <activity
-            android:name=".Services"
+            android:name=".Activities.HealthServiceDetails"
             android:label="@string/app_name" >
         </activity>
+
         <activity
-            android:name=".ServiceDetails"
+            android:name=".Activities.MapView"
             android:label="@string/app_name" >
         </activity>
-        <activity
-            android:name=".Search"
-            android:label="@string/app_name" >
-        </activity>
+
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -55,13 +54,13 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
+       <!-- <activity
             android:name=".activity_map"
             android:label="@string/title_activity_activity_map" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="rhtds.ruralhealthtasdirectoryservices.ServiceDetails" />
-        </activity>
+                android:value="rhtds" />
+        </activity>-->
     </application>
 
 </manifest>

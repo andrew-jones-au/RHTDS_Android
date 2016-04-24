@@ -1,37 +1,59 @@
 package RuralHealthAPIClient.Models;
 
-import java.util.HashMap;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
-import RuralHealthAPIClient.HealthServiceDBContract;
-import RuralHealthAPIClient.Interfaces.HealthServiceModelInterface;
+import java.io.Serializable;
 
 /**
  * Created by John on 2/04/2016.
  */
-public class Address implements HealthServiceModelInterface {
+
+@DatabaseTable(tableName = "address")
+public class Address implements Serializable {
+
+    @DatabaseField(generatedId = true)
+    private int _id;
+
+    @DatabaseField
     private int id;
+
+    @DatabaseField
     private int unitNum;
+
+    @DatabaseField
     private int streetNum;
+
+    @DatabaseField
     private String streetName;
+
+    @DatabaseField
     private String townSuburbCity;
+
+    @DatabaseField
     private int postcode;
+
+    @DatabaseField
     private String country;
+
+    @DatabaseField
     private String state;
-    private Coordinate coordinate;
+
+    @DatabaseField(canBeNull = false, foreign = true, foreignAutoRefresh=true)
+    private Coordinate coordinates;
 
     @Override
-    public HashMap<String, String> toHashMap() {
-        HashMap<String, String> hashMap = new HashMap<String, String>();
+    public String toString()
+    {
+        return streetNum + " " + streetName + " " + townSuburbCity + " " + state +" " + postcode + " " + country;
+    }
 
-        hashMap.put(HealthServiceDBContract.Address.COLUMN_NAME_UNIT_NUM, String.valueOf(unitNum));
-        hashMap.put(HealthServiceDBContract.Address.COLUMN_NAME_STREET_NUM, String.valueOf(streetNum));
-        hashMap.put(HealthServiceDBContract.Address.COLUMN_NAME_STREET_NAME, String.valueOf(streetName));
-        hashMap.put(HealthServiceDBContract.Address.COLUMN_NAME_TOWN_SUBURB_CITY,townSuburbCity);
-        hashMap.put(HealthServiceDBContract.Address.COLUMN_NAME_COUNTRY, country);
-        hashMap.put(HealthServiceDBContract.Address.COLUMN_NAME_POSTCODE, String.valueOf(postcode));
-        hashMap.put(HealthServiceDBContract.Address.COLUMN_NAME_STATE, state);
+    public int get_id() {
+        return _id;
+    }
 
-        return hashMap;
+    public void set_id(int _id) {
+        this._id = _id;
     }
 
     public int getId() {
@@ -98,11 +120,11 @@ public class Address implements HealthServiceModelInterface {
         this.state = state;
     }
 
-    public Coordinate getCoordinate() {
-        return coordinate;
+    public Coordinate getCoordinates() {
+        return coordinates;
     }
 
-    public void setCoordinate(Coordinate coordinate) {
-        this.coordinate = coordinate;
+    public void setCoordinates(Coordinate coordinates) {
+        this.coordinates = coordinates;
     }
 }

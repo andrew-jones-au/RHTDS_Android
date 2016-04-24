@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#fde6d0">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Health Services"
-        android:id="@+id/servicesCategoryTextView" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Please select a health service"
-        android:id="@+id/servicesLocationsTextView" />
+        android:text="Please select a service"
+        android:id="@+id/servicesCategoryTextView"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="459dp"
-        android:id="@+id/servicesListView" />
+        android:layout_height="fill_parent"
+        android:id="@+id/servicesListView"
+        android:background="#fde6d0" />
 </LinearLayout>

@@ -30,6 +30,19 @@ public class ConfigurationManager
     public ConfigurationManager(Context context)
     {
         this.context = context;
+
+        try
+        {
+            updateConfig();
+        }
+        catch(IOException e)
+        {
+            Log.e(TAG, e.toString());
+        }
+        catch(ConfigurationManagerException e)
+        {
+            Log.e(TAG, e.toString());
+        }
     }
 
     public void updateConfig() throws ConfigurationManagerException, IOException
